@@ -1,0 +1,10 @@
+<!-- Player -->
+{% load static %}
+
+<div id='player'></div>
+<img src="{% static 'music/imagenes/rep.jpg'%}" width="500" height="200">
+<div class="crono_wrapper">
+	<h2 id='crono'>00:00:00</h2>
+	<input type="button" value="Empezar" onclick="empezarDetener(this);">
+</div>
+<script src="{% static 'music/js/crono.js'%}"> 

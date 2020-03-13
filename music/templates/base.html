@@ -1,0 +1,27 @@
+<!-- Base -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %} | TuMusica</title>
+    {% load static %}
+    {% block head %}
+    {% endblock head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'music/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'music/player.css' %}">
+    {% block css %}
+    {% endblock css %}
+</head>
+<body>
+    <img src="/static/imagenes/rep.jpg" width="1000"
+         height="1000">
+
+{% endblock body_content %}
+
+{% include 'music/player.html' %}
+
+{% block js %}
+{% endblock js %}
+</body>
+</html>
