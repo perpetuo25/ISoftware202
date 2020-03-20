@@ -1,11 +1,21 @@
 <!-- Top Songs -->
-{% extends 'music/base.html' %}
+
 
 {% load static %}
 
-{% block title %}Canciones populares{% endblock title %}
+{% block title %}{% endblock title %}
 
 {% block body_content %}
     <h1>Estas son las canciones populares:</h1>
+
+    <ul>
+        {% for song in songs  %}
+        <li>{{song}}</li>
+        <img src= "{{song.image.url}}">
+        <gi><a href="{{song.song_file.url}}">Download File</a> 
+        
+        {% endfor %}
+        
+    </ul>
     
 {% endblock body_content %}

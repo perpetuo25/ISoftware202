@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View
+from .models import Song, Artist
+
 
 def index(request):
     template = "music/index.html"
@@ -36,4 +38,8 @@ class TopSongs(View):
 
     def get(self, request):
         """GET method."""
-        return render(request, self.template)
+        songs = Song.objects.all()
+        image = Artist.objects.all()
+        print(songs)
+        print(image)
+        return render(request, self.template, {"songs": songs,"image":image})
