@@ -13,8 +13,8 @@ def image_directory_path(instance, filename):
 class Artist(models.Model):
     """Artist Model."""
 
-    name = models.CharField(max_length=200)
-    image = models.ImageField(upload_to = image_directory_path)
+    name = models.CharField(max_length=200,unique = True)
+    image = models.ImageField(upload_to = image_directory_path,null=True,blank = True)
 
     def __str__(self):
         """Get str representation."""
@@ -23,6 +23,8 @@ class Artist(models.Model):
     def __repr__(self):
         """Get str representation."""
         return self.__str__()
+
+
 
 
 def song_directory_path(instance, filename):
